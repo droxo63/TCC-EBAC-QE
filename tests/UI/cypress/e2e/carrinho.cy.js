@@ -1,4 +1,4 @@
-describe('US002 - Testes de Login', () => {
+describe('US002 - Testes de adicionar produtos no carrinho', () => {
   beforeEach(() => {
     cy.visit('http://lojaebac.ebaconline.art.br/produtos')
   })
@@ -60,26 +60,21 @@ describe('US002 - Testes de Login', () => {
       const total = parseFloat($el.text().replace('R$', '').replace(',', '.').trim())
       expect(total).to.be.within(200, 600)
     })
-
     // Validar que o desconto de 10% foi aplicado
     //cy.get('.cart-discount .woocommerce-Price-amount').should('exist')
-
     /* Validar que o valor com desconto é 10% menor
     cy.get('strong > .woocommerce-Price-amount > bdi').then($el => {
       const totalComDesconto = parseFloat($el.text().replace('R$', '').replace(',', '.').trim())
       cy.get('.cart-subtotal > td > .woocommerce-Price-amount > bdi').then($sub => {
         const subtotal = parseFloat($sub.text().replace('R$', '').replace(',', '.').trim())
         const esperado = subtotal * 0.9
-
         expect(totalComDesconto).to.be.closeTo(esperado, 0.05)
-    
       })
     }) */
   })
 
    it('Adicionar produtos que somem R$600 ➔ aplicar cupom 10%', () => {
     // Repete lógica acima, mas adicionando produtos mais caros
-
     cy.get('.orderby').select('Ordenar por preço: maior para menor')
     cy.contains('Ingrid Running Jacket').click()
     cy.get('.button-variable-item-M').click()
@@ -88,7 +83,6 @@ describe('US002 - Testes de Login', () => {
     cy.get('.input-text').clear().type(5) 
     cy.get('.single_add_to_cart_button').click()
     cy.get('.woocommerce-message > .button').click()
-
     // Validar subtotal entre R$200 e R$600
     cy.get('.cart-subtotal .woocommerce-Price-amount').then($el => {
       const total = parseFloat($el.text().replace('R$', '').replace(',', '.').trim())
@@ -96,19 +90,15 @@ describe('US002 - Testes de Login', () => {
     })
     // Validar que o desconto de 10% foi aplicado
     //cy.get('.cart-discount .woocommerce-Price-amount').should('exist')
-
     /* Validar que o valor com desconto é 10% menor
     cy.get('strong > .woocommerce-Price-amount > bdi').then($el => {
       const totalComDesconto = parseFloat($el.text().replace('R$', '').replace(',', '.').trim())
       cy.get('.cart-subtotal > td > .woocommerce-Price-amount > bdi').then($sub => {
         const subtotal = parseFloat($sub.text().replace('R$', '').replace(',', '.').trim())
         const esperado = subtotal * 0.9
-
         expect(totalComDesconto).to.be.closeTo(esperado, 0.05)
-    
       })
-    }) */
-   
+    }) */ 
       })
     })
   

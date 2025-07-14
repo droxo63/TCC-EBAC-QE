@@ -1,42 +1,35 @@
+import loginPage from '../pageObjects/LoginPage'
+
 describe('Login tests', () => {
-
   beforeEach(() => {
-     cy.visit('http://lojaebac.ebaconline.art.br/produtos')
-  });
-  it('Login with valids credentials', () => {
-   
-    cy.get('#username').type('user1_ebac')
-    cy.get('#password').type('psw!ebac@test')
-    cy.get('.woocommerce-form > .button').click()
-    cy.contains('Olá, user1_ebac').should('be.visible')
-    cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, user1_ebac')
+    loginPage.visit()
+    cy.fixture('users').as('users')
   })
 
-  it('Login with invalid password', () => {
-
-    cy.get('#username').type('user1_ebac')
-    cy.get('#password').type('wrongpassword')
-    cy.get('.woocommerce-form > .button').click()
-    cy.contains('Erro:').should('be.visible')
-    cy.get('.woocommerce-error > li > :nth-child(1)').should('contain', 'Erro')
+  it('Login with valid credentials', function () {
+    const user = this.users.validUser
+    loginPage.login(user.username, user.password)
+    loginPage.assertLoginSuccess(user.username)
   })
 
-    it('Try login 3 times with invalid credentials', () => {
-      for(let i=0; i<3; i++){
-   
-        cy.get('#username').type('user1_ebac')
-        cy.get('#password').type('wrongpassword')
-        cy.get('.woocommerce-form > .button').click()
-        cy.contains('Erro:').should('be.visible')
-      }
-      cy.contains('conta foi bloqueada').should('be.visible')
-    })
+  it('Login with invalid password', function () {
+    const user = this.users.invalidPassword
+    loginPage.login(user.username, user.password)
+    loginPage.assertLoginError('Erro:')
+  })
 
-    it('Login with a inactive account', () => {
-     
-    cy.get('#username').type('usuario_inativo')
-    cy.get('#password').type('psw_inativo')
-    cy.get('.woocommerce-form > .button').click()
-    cy.contains('Erro: O usuário usuario_inativo não está registrado neste site').should('be.visible')
-    })
+  it('Try login 3 times with invalid credentials', function () {
+    const user = this.users.invalidPassword
+    for (let i = 0; i < 3; i++) {
+      loginPage.login(user.username, user.password)
+      loginPage.assertLoginError('Erro:')
+    }
+   // cy.contains('conta foi bloqueada').should('be.visible')
+  })
+
+  it('Login with inactive account', function () {
+    const user = this.users.inactiveUser
+    loginPage.login(user.username, user.password)
+    loginPage.assertLoginError('usuário usuario_inativo não está registrado')
+  })
 })

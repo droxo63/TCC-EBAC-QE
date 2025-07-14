@@ -1,0 +1,60 @@
+{
+  "successAdd": {
+    "name": "Aero Daily Fitness Tee",
+    "quantity": 9,
+    "attributes": {
+      "size1": "XS",
+      "size2": "S",
+      "color": "Black"
+    }
+  },
+  "limitExceed": {
+    "name": "Lando Gym Jacket",
+    "quantity": 11,
+    "attributes": {
+      "size1": "S",
+      "size2": "S",
+      "color": "Blue"
+    }
+  },
+  "aboveLimit": {
+    "name": "Lando Gym Jacket",
+    "quantity": 11,
+    "attributes": {
+      "size1": "M",
+      "size2": "S",
+      "color": "Blue"
+    }
+  },
+  "discount200": [
+    {
+      "name": "Atlas Fitness Tank",
+      "quantity": 5,
+      "attributes": {
+        "size1": "L",
+        "size2": "S",
+        "color": "Blue"
+      }
+    },
+    {
+      "name": "Apollo Running Short",
+      "quantity": 5,
+      "attributes": {
+        "size1": "32",
+        "size2": "34",
+        "color": "Black"
+      }
+    }
+  ],
+  "discount600": [
+    {
+      "name": "Ingrid Running Jacket",
+      "quantity": 5,
+      "attributes": {
+        "size1": "M",
+        "size2": "S",
+        "color": "Red"
+      }
+    }
+  ]
+}
