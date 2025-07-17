@@ -1,0 +1,13 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "integer" },
+      "code": { "type": "string" },
+      "amount": { "type": "string" },
+      "discount_type": { "type": "string" }
+    },
+    "required": ["id", "code", "amount", "discount_type"]
+  }
+}

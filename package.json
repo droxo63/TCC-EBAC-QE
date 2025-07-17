@@ -4,17 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scripts": {
-    "test": "cypress open",
-    "test:run": "cypress run"
-}
-
+    "test:ui": "cypress open",
+    "test:run": "cypress run",
+    "test:api": "jest api/tests",
+    "test": "npm run test:ui && npm run test:api"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.5.1"
+    "ajv": "^8.17.1",
+    "cypress": "^14.5.1",
+    "jest": "^30.0.4",
+    "supertest": "^7.1.3"
   }
 }
