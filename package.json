@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:ui": "cypress open",
-    "test:run": "cypress run",
-    "test:api": "jest api/tests",
-    "test": "npm run test:ui && npm run test:api"
+"test:ui": "cypress run --headless",
+  "test:api": "jest --config=jest.config.js",
+  "test": "npm run test:api && npm run test:ui",
+  "merge:reports": "npx mochawesome-merge reports/ui/*.json > reports/ui/mochawesome.json && npx mochawesome-report-generator reports/ui/mochawesome.json -o reports/ui/html"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,10 @@
     "ajv": "^8.17.1",
     "cypress": "^14.5.1",
     "jest": "^30.0.4",
+    "jest-html-reporters": "^3.1.7",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0",
     "supertest": "^7.1.3"
   }
 }

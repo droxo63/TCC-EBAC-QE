@@ -35,7 +35,7 @@ describe('API - Cupons', () => {
     };
 
     const response = await request(BASE_URL)
-      .post('/coupons') // sem header Authorization
+      .post('/coupons') 
       .send(payload);
 
     expect(response.status).toBe(401);

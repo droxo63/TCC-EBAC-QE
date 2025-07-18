@@ -1,0 +1,41 @@
+name: CI - Testes UI e API
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar testes API (Jest)
+        run: npm run test:api
+
+      - name: Rodar testes UI (Cypress)
+        run: npm run test:ui
+
+      - name: Gerar relatório Cypress consolidado
+        run: npm run merge:reports
+
+      - name: Publicar relatórios como artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: relatorios
+          path: |
+            reports/ui
+            reports/api

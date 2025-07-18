@@ -1,11 +1,23 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   e2e: {
-    
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    baseUrl: 'http://lojaebac.ebaconline.art.br',
+    specPattern: 'tests/UI/cypress/e2e/**/*.cy.{js,jsx,ts,tsx}, 
+    supportFile: false
   },
-  baseUrl: 'http://lojaebac.ebaconline.art.br/',
+
+  // Configuração do Mochawesome
+  reporter: 'mochawesome',
+  reporterOptions: {
+    // pasta onde os relatórios serão gerados
+    reportDir: 'reports/ui',   
+    overwrite: false,
+    html: true,
+    json: true,
+    charts: true
+  },
+
+  video: false, 
+  screenshotOnRunFailure: true
 });
