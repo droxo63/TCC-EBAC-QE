@@ -1,4 +1,4 @@
-describe('US002 - Testes de adicionar produtos no carrinho', () => {
+describe(' - Testes de adicionar produtos no carrinho com dados fixos', () => {
   beforeEach(() => {
     cy.visit('http://lojaebac.ebaconline.art.br/produtos')
   })

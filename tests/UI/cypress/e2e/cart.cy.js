@@ -1,6 +1,6 @@
 import cartPage from '../pageObjects/CartPage'
 
-describe('US002 - Testes de adicionar produtos no carrinho', () => {
+describe(' - Testes de adicionar produtos no carrinho com dados dinamicos', () => {
   beforeEach(() => {
     cartPage.visit()
     cy.fixture('products').as('products')

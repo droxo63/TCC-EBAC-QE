@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-19T13:10:04.377Z",
+    "end": "2025-07-19T13:10:40.174Z",
+    "duration": 35797,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "00c84f96-3e02-453f-b84b-ea37fc1dea2d",
+      "title": "",
+      "fullFile": "tests\\UI\\cypress\\e2e\\cart.cy.js",
+      "file": "tests\\UI\\cypress\\e2e\\cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ff42ed84-e367-4290-8dcb-3af12367f16c",
+          "title": "US002 - Testes de adicionar produtos no carrinho",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add products in the cart with success",
+              "fullTitle": "US002 - Testes de adicionar produtos no carrinho Add products in the cart with success",
+              "timedOut": null,
+              "duration": 7741,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const product = this.products.successAdd;\n_CartPage.default.searchProduct(product.name);\n_CartPage.default.selectAttributes(product.attributes);\n_CartPage.default.setQuantity(product.quantity);\n_CartPage.default.addToCart();\n_CartPage.default.goToCart();",
+              "err": {},
+              "uuid": "fa2d8217-3803-4a58-ba38-ccb84b41732d",
+              "parentUUID": "ff42ed84-e367-4290-8dcb-3af12367f16c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add more than 10 products in the cart",
+              "fullTitle": "US002 - Testes de adicionar produtos no carrinho Add more than 10 products in the cart",
+              "timedOut": null,
+              "duration": 5860,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const product = this.products.limitExceed;\n_CartPage.default.searchProduct(product.name);\n_CartPage.default.selectAttributes(product.attributes);\n_CartPage.default.setQuantity(product.quantity);\n_CartPage.default.addToCart();\n_CartPage.default.goToCart();",
+              "err": {},
+              "uuid": "3459c1c6-97eb-4d4a-989f-2eabf1e7fd53",
+              "parentUUID": "ff42ed84-e367-4290-8dcb-3af12367f16c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add products in the cart with total value + R$ 990,01",
+              "fullTitle": "US002 - Testes de adicionar produtos no carrinho Add products in the cart with total value + R$ 990,01",
+              "timedOut": null,
+              "duration": 5912,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const product = this.products.aboveLimit;\n_CartPage.default.searchProduct(product.name);\n_CartPage.default.selectAttributes(product.attributes);\n_CartPage.default.setQuantity(product.quantity);\n_CartPage.default.addToCart();\n_CartPage.default.goToCart();",
+              "err": {},
+              "uuid": "2fc1005d-3603-4473-b775-457618e29809",
+              "parentUUID": "ff42ed84-e367-4290-8dcb-3af12367f16c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicionar produtos que somem R$200 ➔ aplicar cupom 10%",
+              "fullTitle": "US002 - Testes de adicionar produtos no carrinho Adicionar produtos que somem R$200 ➔ aplicar cupom 10%",
+              "timedOut": null,
+              "duration": 10708,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const combo = this.products.discount200;\n_CartPage.default.addComboProducts(combo);\n_CartPage.default.validateDiscountRange(200, 600);",
+              "err": {},
+              "uuid": "714c34f5-ad62-4b8b-8466-fa4c219c8493",
+              "parentUUID": "ff42ed84-e367-4290-8dcb-3af12367f16c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicionar produtos que somem R$600 ➔ aplicar cupom 10%",
+              "fullTitle": "US002 - Testes de adicionar produtos no carrinho Adicionar produtos que somem R$600 ➔ aplicar cupom 10%",
+              "timedOut": null,
+              "duration": 5226,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const product = this.products.discount600[0];\n_CartPage.default.searchProduct(product.name);\n_CartPage.default.selectAttributes(product.attributes);\n_CartPage.default.setQuantity(product.quantity);\n_CartPage.default.addToCart();\n_CartPage.default.goToCart();\n_CartPage.default.validateDiscountRange(200, 600);",
+              "err": {},
+              "uuid": "0c70780b-120c-42b6-9611-9f5279d1781a",
+              "parentUUID": "ff42ed84-e367-4290-8dcb-3af12367f16c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fa2d8217-3803-4a58-ba38-ccb84b41732d",
+            "3459c1c6-97eb-4d4a-989f-2eabf1e7fd53",
+            "2fc1005d-3603-4473-b775-457618e29809",
+            "714c34f5-ad62-4b8b-8466-fa4c219c8493",
+            "0c70780b-120c-42b6-9611-9f5279d1781a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35447,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/ui",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
