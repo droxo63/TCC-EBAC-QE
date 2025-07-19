@@ -1,0 +1,168 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-07-19T00:27:36.149Z",
+    "end": "2025-07-19T00:27:38.113Z",
+    "duration": 1964,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "5c4ac1e3-4220-41e2-8b76-a8252998b80a",
+      "title": "",
+      "fullFile": "tests\\UI\\cypress\\e2e\\login.cy.js",
+      "file": "tests\\UI\\cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce63301a-3ed5-4366-a6e7-4f05428a1cf1",
+          "title": "Login tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with valid credentials",
+              "fullTitle": "Login tests Login with valid credentials",
+              "timedOut": null,
+              "duration": 1913,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const user = this.users.validUser;\n_LoginPage.default.login(user.username, user.password);\n_LoginPage.default.assertLoginSuccess(user.username);",
+              "err": {
+                "message": "Error: A fixture file could not be found at any of the following paths:\n\n    > cypress\\fixtures\\users\n    > cypress\\fixtures\\users.[ext]\n\nCypress looked for these file extensions at the provided path:\n\n    > .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip\n\nProvide a path to an existing fixture file.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login tests`",
+                "estack": "Error: A fixture file could not be found at any of the following paths:\n\n    > cypress\\fixtures\\users\n    > cypress\\fixtures\\users.[ext]\n\nCypress looked for these file extensions at the provided path:\n\n    > .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip\n\nProvide a path to an existing fixture file.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login tests`\n    at Object.<anonymous> (<embedded>:2749:327496)\n    at Object.tryCatcher (C:\\Users\\diego\\AppData\\Local\\Cypress\\Cache\\14.5.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\util.js:16:23)\n    at Promise._settlePromiseFromHandler (C:\\Users\\diego\\AppData\\Local\\Cypress\\Cache\\14.5.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:512:31)\n    at Promise._settlePromise (C:\\Users\\diego\\AppData\\Local\\Cypress\\Cache\\14.5.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:569:18)\n    at Promise._settlePromise0 (C:\\Users\\diego\\AppData\\Local\\Cypress\\Cache\\14.5.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:614:10)\n    at Promise._settlePromises (C:\\Users\\diego\\AppData\\Local\\Cypress\\Cache\\14.5.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:694:18)\n    at Promise._fulfill (C:\\Users\\diego\\AppData\\Local\\Cypress\\Cache\\14.5.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:638:18)\n    at <unknown> (C:\\Users\\diego\\AppData\\Local\\Cypress\\Cache\\14.5.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\nodeback.js:42:21)\n    at s (<embedded>:227:132401)\n    at D.<anonymous> (<embedded>:2743:158564)\n    at D.emit (node:events:518:28)\n    at D._finish (<embedded>:2743:159494)\n    at i (<embedded>:2743:158885)\n    at D._processSimple2 (<embedded>:2743:164651)\n    at <unknown> (<embedded>:2743:164504)\n    at D._stat2 (<embedded>:2743:165569)\n    at <unknown> (<embedded>:2743:165416)\n    at s (<embedded>:1067:24225)\n    at s (<embedded>:227:132401)\n    at r (<embedded>:2865:13639)\n    at FSReqCallback.oncomplete (node:fs:197:21)",
+                "diff": null
+              },
+              "uuid": "f6cea35f-d99d-4a4b-9547-0607583c3b34",
+              "parentUUID": "ce63301a-3ed5-4366-a6e7-4f05428a1cf1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with invalid password",
+              "fullTitle": "Login tests Login with invalid password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = this.users.invalidPassword;\n_LoginPage.default.login(user.username, user.password);\n_LoginPage.default.assertLoginError('Erro:');",
+              "err": {},
+              "uuid": "1f87c3b3-1c28-445a-83b5-135c2f8e8c07",
+              "parentUUID": "ce63301a-3ed5-4366-a6e7-4f05428a1cf1",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Try login 3 times with invalid credentials",
+              "fullTitle": "Login tests Try login 3 times with invalid credentials",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = this.users.invalidPassword;\nfor (let i = 0; i < 3; i++) {\n  _LoginPage.default.login(user.username, user.password);\n  _LoginPage.default.assertLoginError('Erro:');\n}\n// cy.contains('conta foi bloqueada').should('be.visible')",
+              "err": {},
+              "uuid": "6a291edc-0d3c-461a-80a0-18cf2af7a77e",
+              "parentUUID": "ce63301a-3ed5-4366-a6e7-4f05428a1cf1",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Login with inactive account",
+              "fullTitle": "Login tests Login with inactive account",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = this.users.inactiveUser;\n_LoginPage.default.login(user.username, user.password);\n_LoginPage.default.assertLoginError('usuário usuario_inativo não está registrado');",
+              "err": {},
+              "uuid": "5d8643a1-fb8e-4b46-b4c4-33c50a837a63",
+              "parentUUID": "ce63301a-3ed5-4366-a6e7-4f05428a1cf1",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f6cea35f-d99d-4a4b-9547-0607583c3b34"
+          ],
+          "pending": [],
+          "skipped": [
+            "1f87c3b3-1c28-445a-83b5-135c2f8e8c07",
+            "6a291edc-0d3c-461a-80a0-18cf2af7a77e",
+            "5d8643a1-fb8e-4b46-b4c4-33c50a837a63"
+          ],
+          "duration": 1913,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/ui",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
