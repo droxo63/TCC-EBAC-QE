@@ -14,18 +14,6 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Instalar dependências do sistema para Cypress
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libgtk2.0-0 \
-            libgtk-3-0 \
-            libnotify-dev \
-            libnss3 \
-            libxss1 \
-            libasound2 \
-            xvfb
-
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
