@@ -12,12 +12,24 @@ jobs:
 
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Instalar dependências do sistema para Cypress
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk2.0-0 \
+            libgtk-3-0 \
+            libnotify-dev \
+            libnss3 \
+            libxss1 \
+            libasound2 \
+            xvfb
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Instalar dependências
@@ -34,7 +46,6 @@ jobs:
 
       - name: Publicar relatórios como artefatos
         uses: actions/upload-artifact@v4
-
         with:
           name: relatorios
           path: |
