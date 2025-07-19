@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test:ui": "cypress run --headless",
-   // "test:api": "jest --config=jest.config.js",
     "test:api": "jest",
     "test": "npm run test:api && npm run test:ui",
     "merge:reports": "npx mochawesome-merge reports/ui/*.json > reports/ui/mochawesome.json && npx mochawesome-report-generator reports/ui/mochawesome.json -o reports/ui/html"
