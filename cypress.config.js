@@ -10,13 +10,14 @@ module.exports = defineConfig({
 
   // Configuração do Mochawesome
   reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'reports/ui',   // pasta onde os relatórios serão gerados
-    overwrite: false,
-    html: true,
-    json: true,
-    charts: true
-  },
+ reporterOptions: {
+  reportDir: 'reports/ui',
+  overwrite: false,
+  html: false,   
+  json: true,
+  charts: true
+}
+,
 
   video: false, 
   screenshotOnRunFailure: true

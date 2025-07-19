@@ -7,7 +7,11 @@
     "test:ui": "cypress run --headless",
     "test:api": "jest",
     "test": "npm run test:api && npm run test:ui",
-    "merge:reports": "npx mochawesome-merge reports/ui/*.json > reports/ui/mochawesome.json && npx mochawesome-report-generator reports/ui/mochawesome.json -o reports/ui/html"
+    "merge:reports": "rm -f reports/ui/report.json && npx mochawesome-merge 'reports/ui/mochawesome_*.json' > reports/ui/report.json && npx marge reports/ui/report.json --reportDir reports --inline",
+    "open:report": "npm run merge:reports && start reports/report.html"
+
+
+
   },
   "keywords": [],
   "author": "",

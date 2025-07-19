@@ -29,8 +29,17 @@ jobs:
       - name: Rodar testes UI (Cypress)
         run: npm run test:ui
 
+      - name: Listar arquivos após testes
+        run: ls -R reports/ui
+
       - name: Gerar relatório Cypress consolidado
-        run: npm run merge:reports
+        run: |
+          rm -f reports/ui/report.json
+          if ls reports/ui/mochawesome_*.json 1> /dev/null 2>&1; then
+            npm run merge:reports
+          else
+            echo "Nenhum arquivo JSON encontrado. Verifique a configuração do Mochawesome."
+          fi
 
       - name: Publicar relatórios como artefatos
         uses: actions/upload-artifact@v4
