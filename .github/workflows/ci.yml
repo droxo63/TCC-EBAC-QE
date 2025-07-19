@@ -33,7 +33,8 @@ jobs:
         run: npm run merge:reports
 
       - name: Publicar relatórios como artefatos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
+
         with:
           name: relatorios
           path: |
