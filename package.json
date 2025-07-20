@@ -8,7 +8,9 @@
     "test:api": "jest",
     "test": "npm run test:api && npm run test:ui",
     "merge:reports": "rm -f reports/ui/report.json && npx mochawesome-merge 'reports/ui/mochawesome_*.json' > reports/ui/report.json && npx marge reports/ui/report.json --reportDir reports --inline",
-    "open:report": "npm run merge:reports && start reports/report.html"
+    "open:report": "npm run merge:reports && start reports/report.html",
+     "perf:login": "k6 run tests/k6/login-test.js",
+    "perf:cart": "k6 run tests/k6/cart-test.js"
 
 
 
