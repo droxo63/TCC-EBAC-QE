@@ -4,9 +4,9 @@ Repositório oficial do Trabalho de Conclusão de Curso da Formação Engenheiro
 
 ## 🎯 Objetivo
 
-Este projeto tem como objetivo aplicar os conhecimentos adquiridos durante a formação de QA para validar as funcionalidades do e-commerce [EBAC Shop](http://lojaebac.ebaconline.art.br/), utilizando técnicas e estratégias de testes, automação de testes (UI, API, Mobile), integração contínua e testes de performance.
-
 ## 🗂 Estrutura do Projeto
+
+Este projeto tem como objetivo aplicar os conhecimentos adquiridos durante a formação de QA para validar as funcionalidades do e-commerce [EBAC Shop](http://lojaebac.ebaconline.art.br/), utilizando técnicas e estratégias de testes, automação de testes (UI, API, Mobile), integração contínua e testes de performance.
 
 ```bash
 .
@@ -17,3 +17,5 @@ Este projeto tem como objetivo aplicar os conhecimentos adquiridos durante a for
 ├── .github/
 │   └── workflows/ # Configurações de CI/CD com GitHub Actions
 └── README.md     # Documentação principal do projeto
+
+```
