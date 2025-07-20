@@ -9,11 +9,8 @@
     "test": "npm run test:api && npm run test:ui",
     "merge:reports": "rm -f reports/ui/report.json && npx mochawesome-merge 'reports/ui/mochawesome_*.json' > reports/ui/report.json && npx marge reports/ui/report.json --reportDir reports --inline",
     "open:report": "npm run merge:reports && start reports/report.html",
-     "perf:login": "k6 run tests/k6/login-test.js",
-    "perf:cart": "k6 run tests/k6/cart-test.js"
-
-
-
+    "perf:cart:json": "k6 run tests/k6/simulations/cart.test.js --summary-export=tests/k6/results/cart-summary.json",
+    "perf:login:json": "k6 run tests/k6/simulations/login.test.js --summary-export=tests/k6/results/login-summary.json"
   },
   "keywords": [],
   "author": "",
