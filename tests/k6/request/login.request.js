@@ -15,7 +15,7 @@ export function login(username, password) {
 
   check(res, {
     'login status is 200': (r) => r.status === 200,
-   // 'contains dashboard': (r) => r.body.includes('Minha conta') || r.body.includes('Olá'),
+  
   });
 
   return res;

@@ -7,7 +7,7 @@ const AUTH_HEADER = 'Basic YWRtaW5fZWJhYzpAYWRtaW4hJmJAYyEyMDIy';
 
 describe('API - Cupons', () => {
 
-  // ✅ Cenário 1: Criar cupom com dados válidos
+
   it('Deve criar um cupom com dados válidos (201 Created)', async () => {
     const couponCode = `Cupom${Date.now()}`;
     const payload = {
@@ -26,7 +26,7 @@ describe('API - Cupons', () => {
     expect(response.body.code).toBe(couponCode.toLowerCase());
   });
 
-  // ✅ Cenário 2: Criar cupom sem autenticação
+
   it('Deve retornar 401 ao tentar criar cupom sem autenticação', async () => {
     const payload = {
       code: `Cupom${Date.now()}`,
@@ -43,7 +43,6 @@ describe('API - Cupons', () => {
 
   });
 
-  // ✅ Cenário 3: Criar cupom com código vazio
   it('Deve retornar 400 ao tentar criar cupom com código vazio', async () => {
     const payload = {
       code: '',
@@ -61,7 +60,7 @@ describe('API - Cupons', () => {
 
   });
 
-  // ✅ Cenário 4: Listar todos os cupons existentes
+
   it('Deve listar todos os cupons (200 OK)', async () => {
     const response = await request(BASE_URL)
       .get('/coupons')

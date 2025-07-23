@@ -8,7 +8,7 @@ module.exports = defineConfig({
     baseUrl: 'http://lojaebac.ebaconline.art.br',
   },
 
-  // Configuração do Mochawesome
+ 
   reporter: 'mochawesome',
  reporterOptions: {
   reportDir: 'reports/ui',

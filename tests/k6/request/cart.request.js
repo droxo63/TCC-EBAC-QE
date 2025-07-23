@@ -17,6 +17,6 @@ export function addToCart() {
 
   check(res, {
     'add-to-cart status is 200': (r) => r.status === 200,
-   // 'cart confirmation': (r) => r.body.includes('no seu carrinho'),
+  
   });
 }
